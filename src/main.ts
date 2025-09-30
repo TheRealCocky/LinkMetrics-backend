@@ -8,6 +8,8 @@ async function bootstrap() {
     'http://localhost:3000',
   ];
 
+  console.log('🚀 Allowed Origins:', allowedOrigins);
+
   app.enableCors({
     origin: allowedOrigins,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
