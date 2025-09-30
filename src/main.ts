@@ -8,6 +8,7 @@ async function bootstrap() {
     origin: process.env.FRONTEND_URL || 'http://localhost:3000', // endereço do seu Next.js
     credentials: true,
   });
+  console.log('CORS habilitado para:', process.env.FRONTEND_URL);
 
   const port = Number(process.env.PORT) || 3001;
   await app.listen(port);
