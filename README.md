@@ -1,24 +1,37 @@
-# 🛠️ LinkedMetrics Backend
+# 🔗 LinkedMetrics Backend
 
-Backend of **LinkedMetrics**, built with **NestJS** and powered by **Prisma ORM** with **MongoDB**.  
-Deployed on **Render** with full **CORS support**, **JWT Authentication**, and **REST API** for link rotation & analytics.  
-
----
-
-## 🚀 Tech Stack
-
-- ⚡ [NestJS](https://nestjs.com/) – Node.js framework for scalable apps  
-- 🗄️ [MongoDB](https://www.mongodb.com/) – NoSQL database  
-- 🧩 [Prisma](https://www.prisma.io/) – Type-safe ORM  
-- 🔑 [JWT](https://jwt.io/) – Authentication & authorization  
-- ☁️ [Render](https://render.com/) – Cloud hosting platform  
+> The **backend engine** of [LinkedMetrics](https://link-metrics-frontend.vercel.app), powering authentication, link rotation, and real-time metrics.  
+Built with ⚡ **NestJS**, 💾 **MongoDB + Prisma**, and deployed on ☁️ **Render**.
 
 ---
 
-## 📸 Preview of Architecture
+## 🛠️ Tech Stack
 
-```mermaid
-flowchart TD
-    Client[🌐 Frontend (Next.js)] -->|REST API| Backend[NestJS Server]
-    Backend -->|ORM| Prisma[Prisma]
-    Prisma -->|Database| MongoDB[(MongoDB Atlas)]
+<p align="center">
+  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" />
+</p>
+
+---
+
+## ✨ Core Features
+
+- 🔐 **Authentication & Authorization** (JWT)  
+- 🔗 **Smart Link Rotation** with weighted distribution  
+- 📊 **Metrics & History Tracking** for every click  
+- 🌍 **CORS-Ready API** for frontend integration  
+- 🧩 **Modular & Scalable** NestJS architecture  
+- ☁️ **Zero-downtime Deployment** on Render  
+
+---
+
+## ⚡ Getting Started
+
+### 1️⃣ Clone & Install
+```bash
+git clone https://github.com/your-username/linkedmetrics-backend.git
+cd linkedmetrics-backend
+npm install
