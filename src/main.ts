@@ -4,21 +4,17 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  const allowedOrigins = process.env.FRONTEND_URLS?.split(',') || [
-    'http://localhost:3000',
-  ];
-
-  console.log('🚀 Allowed Origins:', allowedOrigins);
-
+  // 🚨 Liberar tudo (apenas para teste, não é recomendado em produção)
   app.enableCors({
-    origin: allowedOrigins,
+    origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    credentials: true,
+    credentials: false, // se usar cookies, precisa ser true (e aí não pode usar '*')
   });
 
   const port = Number(process.env.PORT) || 3001;
   await app.listen(port);
 }
 bootstrap();
+
 
 
