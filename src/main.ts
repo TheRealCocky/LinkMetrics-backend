@@ -7,13 +7,14 @@ async function bootstrap() {
   app.enableCors({
     origin: (origin, callback) => {
       const allowedOrigins = [
-        'http://localhost:3000',
-        'https://link-metrics-frontend.vercel.app',
+        'http://localhost:3000', // frontend em dev
+        'https://link-metrics-frontend.vercel.app', // frontend em produção
       ];
+
       if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, origin);
+        callback(null, origin); // libera
       } else {
-        callback(new Error('Not allowed by CORS'));
+        callback(new Error('Not allowed by CORS')); // bloqueia
       }
     },
     credentials: true,
