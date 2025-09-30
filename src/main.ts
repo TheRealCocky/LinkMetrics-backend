@@ -4,11 +4,12 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  const allowedOrigins = process.env.FRONTEND_URLS?.split(',') || [
+    'http://localhost:3000',
+  ];
+
   app.enableCors({
-    origin: [
-      'http://localhost:3000', // dev local
-      'https://link-metrics-frontend.vercel.app', // frontend no Vercel
-    ],
+    origin: allowedOrigins,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
@@ -17,4 +18,5 @@ async function bootstrap() {
   await app.listen(port);
 }
 bootstrap();
+
 
