@@ -5,12 +5,16 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000', // endereço do seu Next.js
+    origin: [
+      'http://localhost:3000', // dev local
+      'https://link-metrics-frontend.vercel.app', // frontend no Vercel
+    ],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
-  console.log('CORS habilitado para:', process.env.FRONTEND_URL);
 
   const port = Number(process.env.PORT) || 3001;
   await app.listen(port);
 }
 bootstrap();
+
